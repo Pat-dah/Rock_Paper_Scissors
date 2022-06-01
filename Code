@@ -10,17 +10,19 @@ if player_choice not in options:
 computer_choice = random.choice(options)
 print(computer_choice)
 
-if player_choice == "R" and computer_choice == "S":  # player wind
-    print("You Win!!!")
-elif player_choice == "S" and computer_choice == "R":  # player loose
-    print("You Loose!!!")
-elif player_choice == "S" and computer_choice == "P":
-    print("You Win!!!")
-elif player_choice == "P" and computer_choice == "S":
-    print("You Loose")
-elif player_choice == "P" and computer_choice == "R":
-    print("You Win")
-elif player_choice == "R" and computer_choice == "P":
-    print("You Loose")
-elif player_choice == computer_choice:
-    print("its a Draw!!!!")
+for items in options:
+    if player_choice == computer_choice:
+        print("its a tigh")
+    elif player_choice == "R" and computer_choice == "S":  # player wind
+        print("You Win!!!")
+    elif player_choice == "S" and computer_choice == "R":  # player loose
+        print("You Loose!!!")
+    elif player_choice == "S" and computer_choice == "P":
+        print("You Win!!!")
+    elif player_choice == "P" and computer_choice == "S":
+        print("You Loose")
+    elif player_choice == "P" and computer_choice == "R":
+        print("You Win")
+    elif player_choice == "R" and computer_choice == "P":
+        print("You Loose")
+
