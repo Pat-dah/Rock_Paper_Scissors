@@ -1,0 +1,26 @@
+import random
+"""rock wins against scissors, scissors wins against papaer and pape wins against rock"""
+options = ["R", "P", "S"]
+
+player_choice = input("make your choice: R, for rock, P for Paper, S for scissors :    ").upper()
+print(player_choice)
+if player_choice not in options:
+    print("Wrong Input")
+
+computer_choice = random.choice(options)
+print(computer_choice)
+
+if player_choice == "R" and computer_choice == "S":  # player wind
+    print("You Win!!!")
+elif player_choice == "S" and computer_choice == "R":  # player loose
+    print("You Loose!!!")
+elif player_choice == "S" and computer_choice == "P":
+    print("You Win!!!")
+elif player_choice == "P" and computer_choice == "S":
+    print("You Loose")
+elif player_choice == "P" and computer_choice == "R":
+    print("You Win")
+elif player_choice == "R" and computer_choice == "P":
+    print("You Loose")
+elif player_choice == computer_choice:
+    print("its a Draw!!!!")
