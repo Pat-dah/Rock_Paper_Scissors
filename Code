@@ -1,28 +1,53 @@
 import random
-"""rock wins against scissors, scissors wins against papaer and pape wins against rock"""
-options = ["R", "P", "S"]
 
-player_choice = input("make your choice: R, for rock, P for Paper, S for scissors :    ").upper()
-print(player_choice)
-if player_choice not in options:
-    print("Wrong Input")
+player_choice = input("Make your choice(R, P or S): ").upper()
 
+options = ["Rock", "Paper", "Scissors"]
 computer_choice = random.choice(options)
-print(computer_choice)
+# print(f"Player({player_choice}): CPU({computer_choice})")
 
-for items in options:
-    if player_choice == computer_choice:
-        print("its a tigh")
-    elif player_choice == "R" and computer_choice == "S":  # player wind
-        print("You Win!!!")
-    elif player_choice == "S" and computer_choice == "R":  # player loose
-        print("You Loose!!!")
-    elif player_choice == "S" and computer_choice == "P":
-        print("You Win!!!")
-    elif player_choice == "P" and computer_choice == "S":
-        print("You Loose")
-    elif player_choice == "P" and computer_choice == "R":
-        print("You Win")
-    elif player_choice == "R" and computer_choice == "P":
-        print("You Loose")
+while True:
+    if player_choice == "R":
+        player_choice = "Rock"
+    elif player_choice == "P":
+        player_choice = "Paper"
+    elif player_choice == "S":
+        player_choice = "Scissors"
+    elif player_choice not in options:
+        print(f"invalid choice, Try Again!!!")
+        player_choice = input("Make your choice(R, P or S): ").upper()
+        computer_choice = random.choice(options)
+        print(f"Player({player_choice}): CPU({computer_choice})")
+    elif player_choice == computer_choice:
+        print(f"Player({player_choice}): CPU({computer_choice})")
+        print(f"Both Player and CPU chose ({player_choice})")
+        print(f" its a draw")
+        print(f" Play Again")
+        player_choice = input("Make your choice(R, P or S): ").upper()
+        computer_choice = random.choice(options)
+        continue
+    else:
+        player_choice = input("Make your choice(R, P or S): ").upper()
+
+        if player_choice == "Rock":
+            if computer_choice == "Scissors":
+                print("Player Wins")
+            else:
+                print("CPU WIns, Player Loose ")
+        elif player_choice == "Scissors":
+            if computer_choice == "Paper":
+                print("Player Wins")
+            else:
+                print("CPU wins, Player Loose")
+        elif player_choice == "Paper":
+            if computer_choice == "Rock":
+                print("Player Wins")
+            else:
+                print("CPU wins, Player Loose")
+        print("Game over")
+        break
+
+
+
+
 
